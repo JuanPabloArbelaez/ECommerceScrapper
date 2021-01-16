@@ -3,6 +3,8 @@ import csv
 import json
 from datetime import datetime
 
+import pandas as pd
+
 
 class SaveToDisc:
     _save_format: str = None
@@ -29,9 +31,16 @@ class SaveToDisc:
     def _save_csv(self, filename: str, data: object) -> bool:
         with open(f"{self._output_dir}/{filename}_{self._time}.csv", "w+") as fin:
             csv_writer = csv.writer(fin)
-            header = data[0].keys()
-            csv_writer.writerow(header)
-            for d in data:
-                csv_writer.writerow(d.values())
+            if type(data) is list:
+                header = data[0].keys()
+                csv_writer.writerow(header)
+                for d in data:
+                    csv_writer.writerow(d.values())
+
+            # recursive write to csv
+            df = pd.read_json(json.dumps(data))
+            pd_csv = df.to_csv("test.csv")
+            print(pd_csv)
+            
 
         return True
