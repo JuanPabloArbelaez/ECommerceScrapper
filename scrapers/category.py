@@ -52,7 +52,6 @@ class CategoryScraper(Scraper):
                 output_array.append(dict())
                 # iterate thtough the _relavant_details'
                 for d in self._relevant_details: 
-                    print(d)
                     output_array[ix][d] = e.get(d) # get all details for each product
                 ix += 1
             
