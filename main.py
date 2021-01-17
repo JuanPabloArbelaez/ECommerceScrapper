@@ -33,7 +33,7 @@ if __name__ == "__main__":
     if scrap == "category":
         if not url:
             # Example url if -u not proviced in cmd option
-            url = "https://www.lazada.vn/bikes/" 
+            url = "https://www.lazada.sg/bikes/" 
         
         filename = filename_from_url(url)  
         print(f"[INFO] Creating Scraper for: *{scrap}* in {url}")
