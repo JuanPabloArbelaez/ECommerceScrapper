@@ -33,7 +33,7 @@ $  mkvirtualenv -p python3.8 venv
 
 ##### Scrap custom Lazada Category page and save as csv
 ```
-(venv) $  python main.py -s product -u <CUSTOM LAZADA CATEGORY URL> -f csv
+(venv) $  python main.py -s category -u <CUSTOM LAZADA CATEGORY URL> -f csv
 ```
 
 ##### Scrap custom Lazada Product page and save as json in custom directory
