@@ -1,4 +1,5 @@
 
+import os
 import argparse
 
 from scrapers.category import CategoryScraper
@@ -22,7 +23,12 @@ def filename_from_url(url: str) -> str:
 if __name__ == "__main__":
     url = args.get("url")
     file_format = args.get("format")
-    output_dir = args.get("output")
+    output_dir = f'{os.getcwd()}/{args.get("output")}'
+    if not os.path.exists(output_dir):
+        print(f"[INFO] creating {output_dir} directory.")
+        os.makedirs(output_dir)
+
+
     scrap = args.get("scrap")
 
     if scrap == "category":

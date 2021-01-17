@@ -16,7 +16,6 @@ from utilities import SaveToDisc
 # Base Scraper
 class Scraper:
     _header = {"User-Agent": str(UserAgent().chrome)}
-    print(_header)
     _html_target = "script"
     _output_dir: str = None
     _save_format: str = None
